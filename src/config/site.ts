@@ -68,10 +68,9 @@ export const DEFAULT_GOOGLE_FORM_URL_KO =
 
 /**
  * English Google Form. Override with GOOGLE_FORM_URL_EN.
- * Placeholder: same Korean form until the English form URL is swapped in.
  */
 export const DEFAULT_GOOGLE_FORM_URL_EN =
-  "https://docs.google.com/forms/d/e/1FAIpQLScE2fw2xO5QzLsRfL3BDnBZkWQAXoyJ9Fen_JHyV8HcNx_kMQ/viewform?fbzx=6808152056679439250";
+  "https://docs.google.com/forms/d/e/1FAIpQLSfY7qk9seivpiXf0vr3J4FVme9iIlhx7cz2dtJUgTNBhxvPEg/viewform";
 
 export function getGoogleFormUrl(locale: Locale): string {
   if (locale === "en") {
