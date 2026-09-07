@@ -1,6 +1,5 @@
-import { RedirectToForm } from "@/components/RedirectToForm";
-import { getGoogleFormUrl } from "@/config/site";
+import { LocaleGate } from "@/components/LocaleGate";
 
 export default function HomePage() {
-  return <RedirectToForm href={getGoogleFormUrl()} />;
+  return <LocaleGate />;
 }

@@ -1,56 +1,15 @@
-import type { Metadata, Viewport } from "next";
+import type { Viewport } from "next";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { siteConfig } from "@/config/site";
+import { createPageMetadata } from "@/lib/metadata";
 
-const ogImageUrl = new URL(siteConfig.ogImagePath, siteConfig.url).toString();
-
-export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
-  title: siteConfig.title,
-  description: siteConfig.description,
-  authors: [{ name: siteConfig.name }],
-  robots: {
-    index: false,
-    follow: false,
-  },
-  formatDetection: {
-    telephone: false,
-  },
-  openGraph: {
-    type: "website",
-    siteName: siteConfig.productName,
-    locale: "ko_KR",
-    alternateLocale: ["en_US"],
-    title: siteConfig.title,
-    description: siteConfig.ogDescription,
-    url: "/",
-    images: [
-      {
-        url: siteConfig.ogImagePath,
-        secureUrl: ogImageUrl,
-        type: "image/jpeg",
-        width: 1200,
-        height: 630,
-        alt: siteConfig.ogImageAlt,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.title,
-    description: siteConfig.twitterDescription,
-    images: [
-      {
-        url: siteConfig.ogImagePath,
-        alt: siteConfig.twitterImageAlt,
-      },
-    ],
-  },
-};
+export const metadata = createPageMetadata("root");
 
 export const viewport: Viewport = {
   themeColor: siteConfig.themeColor,
   colorScheme: "light",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

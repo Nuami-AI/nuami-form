@@ -1,8 +1,18 @@
 "use client";
 
 import { useEffect } from "react";
+import { HtmlLang } from "@/components/HtmlLang";
+import { localeContent, type Locale } from "@/config/site";
 
-export function RedirectToForm({ href }: { href: string }) {
+export function RedirectToForm({
+  href,
+  locale,
+}: {
+  href: string;
+  locale: Locale;
+}) {
+  const copy = localeContent[locale];
+
   useEffect(() => {
     const timer = window.setTimeout(() => {
       window.location.replace(href);
@@ -12,16 +22,14 @@ export function RedirectToForm({ href }: { href: string }) {
   }, [href]);
 
   return (
-    <main>
-      <p>뉴아미 사용성 테스트 신청 페이지로 이동하고 있습니다.</p>
-      <p>Redirecting to the NUAMI usability test application form.</p>
-      <p>
-        자동으로 이동하지 않는 경우 <a href={href}>신청서 열기</a>
-      </p>
-      <p>
-        If you are not redirected automatically,{" "}
-        <a href={href}>open the application form.</a>
-      </p>
-    </main>
+    <>
+      <HtmlLang lang={locale} />
+      <main lang={locale}>
+        <p>{copy.redirecting}</p>
+        <p>
+          {copy.fallback} <a href={href}>{copy.openForm}</a>
+        </p>
+      </main>
+    </>
   );
 }
