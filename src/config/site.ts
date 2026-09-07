@@ -6,7 +6,6 @@ export const siteConfig = {
   name: "NUAMI",
   productName: "NUAMI",
   url: "https://form.nuami.kr",
-  ogImagePath: "/og-usability-test.jpg",
   themeColor: "#1F5AF6",
   gaMeasurementId: "G-QJVGQDPKGD",
 } as const;
@@ -23,6 +22,7 @@ export const localeContent = {
     ogImageAlt:
       "뉴아미 사용성 테스트 참여자 모집, NUAMI Usability Test Participants Wanted",
     twitterImageAlt: "뉴아미 사용성 테스트 참여자 모집, NUAMI Usability Test",
+    ogImagePath: "/og-usability-test-ko.jpg",
     ogLocale: "ko_KR",
     alternateLocale: "en_US",
   },
@@ -36,6 +36,7 @@ export const localeContent = {
       "한국 거주 외국인 유학생 대상 사용성 테스트, 참여 혜택 현금 3만원.",
     ogImageAlt: "뉴아미 사용성 테스트 참여자 모집",
     twitterImageAlt: "뉴아미 사용성 테스트 참여자 모집",
+    ogImagePath: "/og-usability-test-ko.jpg",
     ogLocale: "ko_KR",
     alternateLocale: "en_US",
     redirecting: "뉴아미 사용성 테스트 신청 페이지로 이동하고 있습니다.",
@@ -52,6 +53,7 @@ export const localeContent = {
       "Usability test for international students living in Korea, KRW 30,000 reward.",
     ogImageAlt: "NUAMI Usability Test Participants Wanted",
     twitterImageAlt: "NUAMI Usability Test",
+    ogImagePath: "/og-usability-test-en.jpg",
     ogLocale: "en_US",
     alternateLocale: "ko_KR",
     redirecting: "Redirecting to the NUAMI usability test application form.",

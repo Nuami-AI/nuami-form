@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
-import {
-  localeContent,
-  siteConfig,
-  type Locale,
-} from "@/config/site";
-
-const ogImageUrl = new URL(siteConfig.ogImagePath, siteConfig.url).toString();
+import { localeContent, siteConfig, type Locale } from "@/config/site";
 
 type MetadataLocale = Locale | "root";
 
 export function createPageMetadata(locale: MetadataLocale): Metadata {
   const copy = localeContent[locale];
   const path = locale === "root" ? "/" : `/${locale}`;
+  const ogImageUrl = new URL(copy.ogImagePath, siteConfig.url).toString();
 
   return {
     metadataBase: new URL(siteConfig.url),
@@ -42,7 +37,7 @@ export function createPageMetadata(locale: MetadataLocale): Metadata {
       url: path,
       images: [
         {
-          url: siteConfig.ogImagePath,
+          url: copy.ogImagePath,
           secureUrl: ogImageUrl,
           type: "image/jpeg",
           width: 1200,
@@ -57,7 +52,7 @@ export function createPageMetadata(locale: MetadataLocale): Metadata {
       description: copy.twitterDescription,
       images: [
         {
-          url: siteConfig.ogImagePath,
+          url: copy.ogImagePath,
           alt: copy.twitterImageAlt,
         },
       ],
