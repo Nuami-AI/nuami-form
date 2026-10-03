@@ -6,7 +6,7 @@ export const siteConfig = {
   name: "NUAMI",
   productName: "NUAMI",
   url: "https://form.nuami.kr",
-  themeColor: "#1F5AF6",
+  themeColor: "#8651F2",
   gaMeasurementId: "G-QJVGQDPKGD",
 } as const;
 
