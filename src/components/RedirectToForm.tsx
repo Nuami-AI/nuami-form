@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { HtmlLang } from "@/components/HtmlLang";
-import { localeContent, type Locale } from "@/config/site";
+import type { Locale } from "@/config/site";
 
 export function RedirectToForm({
   href,
@@ -11,25 +11,9 @@ export function RedirectToForm({
   href: string;
   locale: Locale;
 }) {
-  const copy = localeContent[locale];
-
   useEffect(() => {
-    const timer = window.setTimeout(() => {
-      window.location.replace(href);
-    }, 500);
-
-    return () => window.clearTimeout(timer);
+    window.location.replace(href);
   }, [href]);
 
-  return (
-    <>
-      <HtmlLang lang={locale} />
-      <main lang={locale}>
-        <p>{copy.redirecting}</p>
-        <p>
-          {copy.fallback} <a href={href}>{copy.openForm}</a>
-        </p>
-      </main>
-    </>
-  );
+  return <HtmlLang lang={locale} />;
 }
