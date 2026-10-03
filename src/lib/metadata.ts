@@ -22,10 +22,11 @@ export function createPageMetadata(locale: MetadataLocale): Metadata {
     },
     alternates: {
       canonical: path,
-      languages: {
-        ko: "/ko",
-        en: "/en",
-      },
+      // Language-split versions — restore if needed later.
+      // languages: {
+      //   ko: "/ko",
+      //   en: "/en",
+      // },
     },
     openGraph: {
       type: "website",
@@ -42,6 +43,14 @@ export function createPageMetadata(locale: MetadataLocale): Metadata {
           type: "image/jpeg",
           width: 1200,
           height: 630,
+          alt: copy.ogImageAlt,
+        },
+        {
+          url: copy.ogImagePath,
+          secureUrl: ogImageUrl,
+          type: "image/jpeg",
+          width: 1200,
+          height: 600,
           alt: copy.ogImageAlt,
         },
       ],

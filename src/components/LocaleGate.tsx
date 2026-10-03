@@ -1,5 +1,7 @@
 "use client";
 
+// Unused while language split is disabled. Restore from src/app/page.tsx comments.
+
 import { useEffect } from "react";
 import { HtmlLang } from "@/components/HtmlLang";
 

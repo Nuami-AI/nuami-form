@@ -22,7 +22,7 @@ export const localeContent = {
     ogImageAlt:
       "뉴아미 사용성 테스트 참여자 모집, NUAMI Usability Test Participants Wanted",
     twitterImageAlt: "뉴아미 사용성 테스트 참여자 모집, NUAMI Usability Test",
-    ogImagePath: "/og-usability-test-ko.jpg",
+    ogImagePath: "/og.jpg",
     ogLocale: "ko_KR",
     alternateLocale: "en_US",
   },
@@ -36,7 +36,7 @@ export const localeContent = {
       "한국 거주 외국인 유학생 대상 사용성 테스트, 참여 혜택 현금 3만원.",
     ogImageAlt: "뉴아미 사용성 테스트 참여자 모집",
     twitterImageAlt: "뉴아미 사용성 테스트 참여자 모집",
-    ogImagePath: "/og-usability-test-ko.jpg",
+    ogImagePath: "/og.jpg",
     ogLocale: "ko_KR",
     alternateLocale: "en_US",
     redirecting: "뉴아미 사용성 테스트 신청 페이지로 이동하고 있습니다.",
@@ -53,7 +53,7 @@ export const localeContent = {
       "Usability test for international students living in Korea, KRW 30,000 reward.",
     ogImageAlt: "NUAMI Usability Test Participants Wanted",
     twitterImageAlt: "NUAMI Usability Test",
-    ogImagePath: "/og-usability-test-en.jpg",
+    ogImagePath: "/og.jpg",
     ogLocale: "en_US",
     alternateLocale: "ko_KR",
     redirecting: "Redirecting to the NUAMI usability test application form.",
@@ -63,30 +63,38 @@ export const localeContent = {
 } as const;
 
 /**
- * Korean Google Form. Override with GOOGLE_FORM_URL_KO.
+ * Single Google Form. Override with GOOGLE_FORM_URL.
  */
-export const DEFAULT_GOOGLE_FORM_URL_KO =
-  "https://docs.google.com/forms/d/e/1FAIpQLScE2fw2xO5QzLsRfL3BDnBZkWQAXoyJ9Fen_JHyV8HcNx_kMQ/viewform?fbzx=6808152056679439250";
+export const DEFAULT_GOOGLE_FORM_URL =
+  "https://forms.gle/jhBZEJDC55dRrBfSA";
 
-/**
- * English Google Form. Override with GOOGLE_FORM_URL_EN.
- */
-export const DEFAULT_GOOGLE_FORM_URL_EN =
-  "https://docs.google.com/forms/d/e/1FAIpQLSfY7qk9seivpiXf0vr3J4FVme9iIlhx7cz2dtJUgTNBhxvPEg/viewform";
-
-export function getGoogleFormUrl(locale: Locale): string {
-  if (locale === "en") {
-    return (
-      process.env.GOOGLE_FORM_URL_EN?.trim() || DEFAULT_GOOGLE_FORM_URL_EN
-    );
-  }
-
-  return (
-    process.env.GOOGLE_FORM_URL_KO?.trim() ||
-    process.env.GOOGLE_FORM_URL?.trim() ||
-    DEFAULT_GOOGLE_FORM_URL_KO
-  );
+export function getGoogleFormUrl(_locale?: Locale): string {
+  return process.env.GOOGLE_FORM_URL?.trim() || DEFAULT_GOOGLE_FORM_URL;
 }
+
+/*
+ * Korean / English split — restore if needed later.
+ *
+ * export const DEFAULT_GOOGLE_FORM_URL_KO =
+ *   "https://docs.google.com/forms/d/e/1FAIpQLScE2fw2xO5QzLsRfL3BDnBZkWQAXoyJ9Fen_JHyV8HcNx_kMQ/viewform?fbzx=6808152056679439250";
+ *
+ * export const DEFAULT_GOOGLE_FORM_URL_EN =
+ *   "https://docs.google.com/forms/d/e/1FAIpQLSfY7qk9seivpiXf0vr3J4FVme9iIlhx7cz2dtJUgTNBhxvPEg/viewform";
+ *
+ * export function getGoogleFormUrl(locale: Locale): string {
+ *   if (locale === "en") {
+ *     return (
+ *       process.env.GOOGLE_FORM_URL_EN?.trim() || DEFAULT_GOOGLE_FORM_URL_EN
+ *     );
+ *   }
+ *
+ *   return (
+ *     process.env.GOOGLE_FORM_URL_KO?.trim() ||
+ *     process.env.GOOGLE_FORM_URL?.trim() ||
+ *     DEFAULT_GOOGLE_FORM_URL_KO
+ *   );
+ * }
+ */
 
 export function isLocale(value: string): value is Locale {
   return value === "ko" || value === "en";

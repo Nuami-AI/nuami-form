@@ -1,0 +1,18 @@
+[
+  {
+    "sessionId": "0cabf419-6ee2-4677-83b7-d133c428e9e6",
+    "reason": "user_close",
+    "endedAt": "2026-09-08T03:15:30.186Z",
+    "feature": null,
+    "phase": null,
+    "progress": null
+  },
+  {
+    "sessionId": "cdb1e826-21c4-4d3c-aebc-f1ca4cabec21",
+    "reason": "user_close",
+    "endedAt": "2026-09-08T03:15:30.482Z",
+    "feature": null,
+    "phase": null,
+    "progress": null
+  }
+]
