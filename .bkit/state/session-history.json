@@ -14,5 +14,21 @@
     "feature": null,
     "phase": null,
     "progress": null
+  },
+  {
+    "sessionId": "cdb1e826-21c4-4d3c-aebc-f1ca4cabec21",
+    "reason": "user_close",
+    "endedAt": "2026-10-05T11:07:26.324Z",
+    "feature": null,
+    "phase": null,
+    "progress": null
+  },
+  {
+    "sessionId": "43116dc1-0188-4ab2-9297-d220107b8118",
+    "reason": "user_close",
+    "endedAt": "2026-10-05T11:07:26.469Z",
+    "feature": null,
+    "phase": null,
+    "progress": null
   }
 ]
