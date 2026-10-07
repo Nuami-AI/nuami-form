@@ -3,9 +3,12 @@ import { localeContent, siteConfig, type Locale } from "@/config/site";
 
 type MetadataLocale = Locale | "root";
 
-export function createPageMetadata(locale: MetadataLocale): Metadata {
+export function createPageMetadata(
+  locale: MetadataLocale,
+  pathOverride?: string,
+): Metadata {
   const copy = localeContent[locale];
-  const path = locale === "root" ? "/" : `/${locale}`;
+  const path = pathOverride ?? (locale === "root" ? "/" : `/${locale}`);
   const ogImageUrl = new URL(copy.ogImagePath, siteConfig.url).toString();
 
   return {
